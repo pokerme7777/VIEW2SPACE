@@ -5,9 +5,9 @@
 <h1 align="center">VIEW2SPACE: Studying Multi-View Visual Reasoning from Sparse Observations</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Training_Data-April_2026-f97316?style=for-the-badge" alt="Training Data Release" />
-  <img src="https://img.shields.io/badge/Challenge-Coming_Soon-10b981?style=for-the-badge" alt="Challenge Coming Soon" />
-  <img src="https://img.shields.io/badge/Project_Status-Preparing-3b82f6?style=for-the-badge" alt="Project Status" />
+  <a href="http://arxiv.org/abs/2603.16506"><img src="https://img.shields.io/badge/arXiv-2603.16506-b31b1b?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv Paper" /></a>
+  <img src="https://img.shields.io/badge/Training Data-Apr_2026-f97316?style=flat-square" alt="Training Data Release" />
+  <img src="https://img.shields.io/badge/Challenge-Soon-10b981?style=flat-square" alt="Challenge Coming Soon" />
 </p>
 
 ## Motivation
@@ -25,7 +25,7 @@
 
 We are preparing the first public release of VIEW2SPACE resources.
 
-- **Training data release:** April 2026
-- **VIEW2SPACE Challenge:** Coming soon
+- **Training data release:** Apr 2026
+- **VIEW2SPACE Challenge:** Soon
 
 Stay tuned.
