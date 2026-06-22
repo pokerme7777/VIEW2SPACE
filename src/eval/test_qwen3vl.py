@@ -1,30 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Batch inference for Qwen3-VL with *real* box drawing during inference.
+Batch inference for Qwen3-VL with real box drawing during inference.
 
 What it does:
 - Read in_overall_jsonl (overall-format records)
 - For each record: build Qwen-style messages (system+user) using build_messages_one()
-- Materialize each "image_path + bboxes" into a PIL image with boxes drawn (green rectangles)
+- Materialize each image_path + bboxes item into a PIL image with boxes drawn
 - Run batch generation with Qwen3-VL
 - Save predictions to result_dir/predictions.jsonl
-- (Optional) Save boxed images to result_dir/boxed_images/ for debugging
-
-Usage example:
-python infer_qwen3vl_draw_boxes_batch.py \
-  --model_dir /path/to/model_dir \
-  --in_overall_jsonl /path/to/overall.jsonl \
-  --scenes_root /path/to/scenes_root \
-  --result_dir /path/to/result_dir \
-  --batch_size 4 \
-  --max_new_tokens 128
+- Optionally save boxed images to result_dir/boxed_images/ for debugging
 
 Notes:
-- Place this file in the same directory as build_qwen3vl_train_jsonl.py, or use --build_py to point to it.
+- This script depends on src/build_qwen3vl_train_jsonl.py.
 """
 
 import os
+import sys
 import json
 import argparse
 from pathlib import Path
@@ -36,10 +28,11 @@ from PIL import Image, ImageDraw
 from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
 
-try:
-    from .build_qwen3vl_train_jsonl import build_messages_one
-except ImportError:
-    from build_qwen3vl_train_jsonl import build_messages_one
+SRC_ROOT = Path(__file__).resolve().parents[1]
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from build_qwen3vl_train_jsonl import build_messages_one
 
 # -----------------------------
 # Utilities

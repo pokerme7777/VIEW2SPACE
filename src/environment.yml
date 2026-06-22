@@ -1,0 +1,14 @@
+name: view2space
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - accelerate==1.12.0
+      - Pillow==12.0.0
+      - torch==2.7.1
+      - tqdm==4.67.1
+      - transformers==4.57.0

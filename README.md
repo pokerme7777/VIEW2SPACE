@@ -13,9 +13,7 @@
 <p align="center">
   <a href="http://arxiv.org/abs/2603.16506"><img src="https://img.shields.io/badge/arXiv-2603.16506-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv Paper" /></a>
   <img src="https://img.shields.io/badge/ECCV_2026-Paper_Accepted-2563eb?style=for-the-badge" alt="ECCV 2026 Paper Accepted" />
-  <img src="https://img.shields.io/badge/Training_Data-Coming_Soon-f97316?style=for-the-badge" alt="Training Data Coming Soon" />
-  <a href="https://huggingface.co/Pokerme/view2space_4b"><img src="https://img.shields.io/badge/Checkpoint-4B_Released-059669?style=for-the-badge" alt="4B Checkpoint Released" /></a>
-  <a href="https://huggingface.co/datasets/Pokerme/view2space-v1"><img src="https://img.shields.io/badge/Testing-v1_Release-10b981?style=for-the-badge" alt="Testing v1 Release" /></a>
+  <a href="https://huggingface.co/collections/Pokerme/view2space"><img src="https://img.shields.io/badge/HF_Collection-VIEW2SPACE-f97316?style=for-the-badge" alt="VIEW2SPACE Hugging Face Collection" /></a>
 </p>
 
 ## Motivation
@@ -29,9 +27,23 @@
 We are preparing the first public release of VIEW2SPACE resources.
 
 - **Paper status:** Accepted to ECCV 2026 🚀
+- **Hugging Face collection:** [`VIEW2SPACE`](https://huggingface.co/collections/Pokerme/view2space)
 - **Testing set release:** [`view2space-v1`](https://huggingface.co/datasets/Pokerme/view2space-v1) ✅
+- **Training data release:** [`view2space-train`](https://huggingface.co/datasets/Pokerme/view2space-train) ✅
 - **Checkpoint release:** [`view2space_GCoT_4b_checkpoint`](https://huggingface.co/Pokerme/view2space_4b) ✅
-- **Training data:** Coming soon, currently being packaged ⏳
+
+## Quick Start
+
+For public evaluation, start here:
+
+- `src/README.md`
+- `src/eval/run_all_subsets.sh`
+
+Source code is organized by responsibility:
+
+- `src/eval`: public evaluation entrypoints
+- `src/train`: training launchers and preprocessing helpers
+- `src`: shared prompt, message-building, and config files
 
 
 

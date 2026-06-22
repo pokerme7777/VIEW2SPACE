@@ -8,10 +8,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from tqdm import tqdm
 
-try:
-    from . import testing_prompt as prompt_module
-except ImportError:
-    import testing_prompt as prompt_module
+import testing_prompt as prompt_module
 
 
 DEFAULT_PROMPT_STYLE = "default"
