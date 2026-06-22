@@ -118,7 +118,11 @@ bash src/eval/run_all_subsets.sh \
 
 Additional inference arguments can be appended after `RESULT_ROOT`.
 
-Example with the released Hugging Face checkpoint:
+Released Hugging Face checkpoint:
+
+- `Pokerme/view2space_4b`
+
+Example:
 
 ```bash
 bash src/eval/run_all_subsets.sh \
@@ -167,6 +171,22 @@ Before running them:
 - edit the path variables at the top of `src/train/training_data_preprocessing.sh`
 - edit the path variables at the top of `src/train/train_qwen3_vl.sh`
 - keep the training arguments unchanged unless you intentionally want to tune them
+
+`src/train/training_data_preprocessing.sh` expects a single training subset
+folder with this structure:
+
+```text
+your-training-subset/
+  overall.jsonl
+  images/...
+```
+
+In that case:
+
+- set `DATA_ROOT` to `your-training-subset`
+- set `OUT_JSONL` to the JSONL file you want to train on, for example
+  `/path/to/output/train.jsonl`
+- set `TRAIN_FILE` in `src/train/train_qwen3_vl.sh` to the same output JSONL path
 
 ## Notes
 

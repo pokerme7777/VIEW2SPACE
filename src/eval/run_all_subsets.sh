@@ -35,7 +35,13 @@ for SUBSET in count detect mcq; do
     "${DEFAULT_TEST_ARGS[@]}" \
     "$@"
 
-  python "$SCRIPT_DIR/evaluation_qwen3vl.py" \
-    --predictions_jsonl "$OUTPUT_DIR/predictions.jsonl" \
+  EVAL_ARGS=(
+    --predictions_jsonl "$OUTPUT_DIR/predictions.jsonl"
     --task_mode "$SUBSET"
+  )
+  if [[ "$SUBSET" == "detect" ]]; then
+    EVAL_ARGS+=(--scale_1000)
+  fi
+
+  python "$SCRIPT_DIR/evaluation_qwen3vl.py" "${EVAL_ARGS[@]}"
 done

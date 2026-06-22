@@ -4,7 +4,7 @@
 # Keep the training arguments below unchanged unless you intentionally want to tune them.
 
 SRC_ROOT="/path/to/VIEW2SPACE_DEV/src"
-TRAIN_FILE="/path/to/your/omni_300k_cot_training.jsonl"
+TRAIN_FILE="/path/to/output/train.jsonl"
 OUTPUT_DIR="/path/to/your/trained_model"
 DEEPSPEED_CONFIG="$SRC_ROOT/deepspeed_zero3.yaml"
 
