@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VIEW2SPACE | ECCV 2026</title>
+    <meta
+      name="description"
+      content="VIEW2SPACE is an ECCV 2026 accepted benchmark and data engine for sparse multi-view visual reasoning from physically grounded 3D scenes."
+    />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta property="og:title" content="VIEW2SPACE: Studying Multi-View Visual Reasoning from Sparse Observations" />
+    <meta
+      property="og:description"
+      content="ECCV 2026 accepted paper introducing a scalable benchmark, data engine, and grounded chain-of-thought training for sparse multi-view visual reasoning."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/teaser.webp" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f7f5ef'/%3E%3Cpath d='M8 8h48v48H8z' fill='none' stroke='%231f241b' stroke-width='5'/%3E%3Cpath d='M32 9v46M9 32h46' stroke='%232f6f5e' stroke-width='5'/%3E%3C/svg%3E" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/teaser.webp"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="VIEW2SPACE home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>VIEW2SPACE</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+        <div class="nav-links" id="site-nav" data-nav-links>
+          <a href="#overview">Overview</a>
+          <a href="#benchmark">Benchmark</a>
+          <a href="#engine">Engine</a>
+          <a href="#results">Results</a>
+          <a href="#resources">Resources</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section-pad" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            <span class="title-brand">VIEW2SPACE</span>
+            <span class="title-subtitle">Studying Multi-View Visual Reasoning from Sparse Observations</span>
+          </h1>
+          <p class="venue-badge">ECCV 2026 Accepted Paper</p>
+        </div>
+
+        <figure class="hero-figure">
+          <img
+            src="assets/teaser.webp"
+            width="2400"
+            height="662"
+            alt="VIEW2SPACE teaser showing sparse drone and robot-dog views aligned for multi-view reasoning."
+            fetchpriority="high"
+          />
+          <figcaption>
+            Sparse observations from heterogeneous viewpoints require matching objects, visibility, and spatial
+            relations that are not fully visible in any single image.
+          </figcaption>
+        </figure>
+
+        <div class="hero-meta">
+          <p class="hero-lede">
+            A benchmark and scalable data engine for testing whether vision-language models can integrate sparse,
+            incomplete viewpoints into a shared spatial understanding.
+          </p>
+          <div class="author-block" aria-label="Authors and affiliations">
+            <p class="author-line">Fucai Ke, Zhixi Cai, Boying Li, Long Chen, Beibei Lin</p>
+            <p class="author-line">Weiqing Wang, Pari Delir Haghighi, Gholamreza Haffari, Hamid Rezatofighi</p>
+            <p class="affiliation-line">Monash University, Australia · National University of Singapore</p>
+          </div>
+          <div class="hero-actions" aria-label="Project links">
+            <a class="button primary" href="http://arxiv.org/abs/2603.16506">arXiv</a>
+            <a class="button secondary" href="https://github.com/pokerme7777/VIEW2SPACE">Code</a>
+            <a class="button hf-button" href="https://huggingface.co/collections/Pokerme/view2space">Hugging Face</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-pad" id="overview" aria-labelledby="overview-title">
+        <div class="section-heading">
+          <p class="eyebrow">Overview</p>
+          <h2 id="overview-title">A controlled testbed for sparse multi-view reasoning.</h2>
+        </div>
+        <div class="abstract-grid">
+          <article class="abstract-text">
+            <h3>Abstract</h3>
+            <p>
+              Multi-view visual reasoning is essential for intelligent systems that operate from sparse and discrete
+              viewpoints. VIEW2SPACE uses physically grounded simulation to construct diverse, high-fidelity 3D scenes
+              with precise per-view metadata, enabling scalable generation of grounded question-answer pairs for
+              evaluation and training.
+            </p>
+            <p>
+              The benchmark shows that current vision-language and spatial models remain far from solving sparse
+              multi-view reasoning. Grounded Chain-of-Thought with Visual Evidence substantially improves performance,
+              while difficulty-aware scaling analyses reveal persistent limits in deep compositional reasoning.
+            </p>
+          </article>
+          <div class="stat-grid" aria-label="VIEW2SPACE key statistics">
+            <div class="stat">
+              <span>3M</span>
+              <p>grounded QA pairs supported by the engine</p>
+            </div>
+            <div class="stat">
+              <span>2,000</span>
+              <p>diverse 3D scenes for large-scale generation</p>
+            </div>
+            <div class="stat">
+              <span>40+</span>
+              <p>scene themes with controllable layouts</p>
+            </div>
+            <div class="stat">
+              <span>3,591</span>
+              <p>questions in the public VIEW2SPACE-v1 evaluation split</p>
+            </div>
+          </div>
+        </div>
+        <div class="contribution-row" aria-label="Paper contributions">
+          <article>
+            <span>01</span>
+            <h3>Scalable Benchmark</h3>
+            <p>Multi-view spatial reasoning with graded difficulty and strict visual-evidence constraints.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Model Analysis</h3>
+            <p>Systematic evaluation reveals weak grounding and shortcut behavior in current models.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Grounded CoT</h3>
+            <p>Step-wise visual evidence improves reasoning and synthetic-to-real transfer.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Scaling Limits</h3>
+            <p>Compositional reasoning remains difficult even with more data and larger models.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-pad alt" id="benchmark" aria-labelledby="benchmark-title">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Benchmark</p>
+          <h2 id="benchmark-title">Tasks shrink the answer space until visual grounding is unavoidable.</h2>
+          <p>
+            VIEW2SPACE-v1 spans multiple-choice reasoning, visual counting, and visual grounding detection, with
+            difficulty controlled through view count, reasoning hops, and key-object visibility.
+          </p>
+        </div>
+        <figure class="figure-panel wide">
+          <img
+            src="assets/benchmark-demo.webp"
+            width="2000"
+            height="768"
+            alt="Examples of VIEW2SPACE counting, visual grounding, and multiple-choice task designs."
+          />
+          <figcaption>
+            The benchmark moves from permissive answer formats to grounding-heavy tasks where hallucinated reasoning is
+            least tolerated.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section section-pad" id="engine" aria-labelledby="engine-title">
+        <div class="split-section">
+          <div>
+            <p class="eyebrow">Data Engine</p>
+            <h2 id="engine-title">Physically grounded scenes with view-consistent metadata.</h2>
+            <p>
+              The engine curates realistic 3D assets, normalizes object scale, generates diverse themed scenes, renders
+              sparse viewpoints, and extracts metadata including 2D boxes, 3D boxes, object locations, camera poses,
+              occlusion rates, and segmentation.
+            </p>
+          </div>
+          <div class="metric-strip" aria-label="Engine capabilities">
+            <div><strong>RGB</strong><span>multi-view observations</span></div>
+            <div><strong>2D/3D</strong><span>geometric supervision</span></div>
+            <div><strong>Disjoint</strong><span>train and test scenes</span></div>
+          </div>
+        </div>
+        <figure class="figure-panel wide">
+          <img
+            src="assets/pipeline.webp"
+            width="2000"
+            height="1058"
+            alt="VIEW2SPACE data engine pipeline from asset library and scene design to rendering, metadata extraction, and question generation."
+          />
+          <figcaption>
+            A controllable generation pipeline makes it possible to vary viewpoint geometry, visibility, and reasoning
+            depth while preserving precise supervision.
+          </figcaption>
+        </figure>
+        <div class="scene-showcase" aria-label="Metadata and scene theme examples">
+          <div class="scene-stack">
+            <figure class="figure-panel scene-panel metadata-panel">
+              <img
+                src="assets/metadata.webp"
+                width="1800"
+                height="900"
+                alt="Rendered RGB, mesh, depth, 2D boxes, 3D boxes, and segmentation metadata samples."
+              />
+              <figcaption>
+                <strong>Metadata samples</strong>
+                <span>RGB, mesh, depth, 2D/3D boxes, occlusion-aware annotations, and segmentation supervision.</span>
+              </figcaption>
+            </figure>
+            <figure class="figure-panel scene-panel osg-panel">
+              <img
+                src="assets/osg-tag.webp"
+                width="1800"
+                height="538"
+                alt="Overview-driven semantic differentiation and tagging pipeline for VIEW2SPACE assets."
+              />
+              <figcaption>
+                <strong>Semantic tagging</strong>
+                <span>Overview-driven tags separate asset categories into grounded, queryable semantic differences.</span>
+              </figcaption>
+            </figure>
+          </div>
+          <figure class="figure-panel scene-panel themes-panel">
+            <img
+              src="assets/themes.webp"
+              width="1600"
+              height="2187"
+              alt="VIEW2SPACE scene thematic categories including aerial, shopping, garden, car park, beach, factory, library, and more."
+            />
+            <figcaption>
+              <strong>Everyday themes</strong>
+              <span>More than 40 scene families support broad spatial, semantic, and viewpoint variation.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section-pad alt" id="results" aria-labelledby="results-title">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Results</p>
+          <h2 id="results-title">Sparse multi-view reasoning remains largely unsolved.</h2>
+          <p>
+            VIEW2SPACE-v1 first asks whether current models can reason across sparse views at all. The answer is clear:
+            most general and spatial models remain close to random under strict visual grounding, while training on
+            VIEW2SPACE substantially improves the gap.
+          </p>
+        </div>
+
+        <article class="result-block">
+          <div class="result-block-header">
+            <p class="eyebrow">Table 1</p>
+            <h3>Comparison on VIEW2SPACE-v1</h3>
+            <p>
+              Current MLLMs and spatial models struggle on VIEW2SPACE, especially under strict visual grounding.
+              Training helps substantially: Grounded CoT reaches 64.93 MCQ accuracy, 54.99 counting accuracy, and
+              69.34 grounding mIoU.
+            </p>
+          </div>
+          <div class="table-scroll" role="region" aria-label="Table 1: Comparison on VIEW2SPACE-v1" tabindex="0">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th scope="col">Method</th>
+                  <th scope="col">MCQ ACC</th>
+                  <th scope="col">Count MAE</th>
+                  <th scope="col">Count ACC</th>
+                  <th scope="col">Grounding mIoU</th>
+                  <th scope="col">Grounding F1</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">Baseline</th></tr>
+                <tr><th scope="row">Random (chance)</th><td>28.59</td><td>11.37</td><td>3.39</td><td>0.22</td><td>0.00</td></tr>
+                <tr><th scope="row">Random (frequency)</th><td>28.59</td><td>2.46</td><td>13.05</td><td>2.01</td><td>0.27</td></tr>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">Open-source MLLMs</th></tr>
+                <tr><th scope="row">InternVL2.5-8B</th><td>30.93</td><td>2.04</td><td>22.50</td><td>0.79</td><td>0.00</td></tr>
+                <tr><th scope="row">Mantis-8B (SigLip)</th><td>30.07</td><td>2.94</td><td>17.60</td><td>1.24</td><td>0.23</td></tr>
+                <tr><th scope="row">DeepSeek-VL2-Small</th><td>29.43</td><td>2.20</td><td>24.37</td><td>2.86</td><td>0.19</td></tr>
+                <tr><th scope="row">Gemma-3-12B-it</th><td>31.14</td><td>2.08</td><td>24.53</td><td>2.49</td><td>0.24</td></tr>
+                <tr><th scope="row">Idefics2-8B</th><td>26.64</td><td>3.92</td><td>11.34</td><td>0.39</td><td>0.00</td></tr>
+                <tr><th scope="row">Qwen2.5-VL-7B</th><td>30.29</td><td>2.70</td><td>13.03</td><td>2.68</td><td>0.32</td></tr>
+                <tr><th scope="row">Qwen3-VL-2B</th><td>31.43</td><td>2.63</td><td>16.34</td><td>11.20</td><td>5.07</td></tr>
+                <tr><th scope="row">Qwen3-VL-4B</th><td>35.19</td><td>2.26</td><td>21.15</td><td>16.53</td><td>18.72</td></tr>
+                <tr><th scope="row">Qwen3-VL-8B</th><td>37.41</td><td>2.10</td><td>24.92</td><td>10.05</td><td>7.37</td></tr>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">Open-source Spatial Models</th></tr>
+                <tr><th scope="row">Molmo2-4B</th><td>31.36</td><td>2.21</td><td>22.17</td><td>1.17</td><td>0.13</td></tr>
+                <tr><th scope="row">Molmo2-8B</th><td>34.57</td><td>5.93</td><td>21.66</td><td>1.51</td><td>0.00</td></tr>
+                <tr><th scope="row">RoboBrain2.0</th><td>30.79</td><td>2.22</td><td>21.49</td><td>0.00</td><td>0.00</td></tr>
+                <tr><th scope="row">Spatial-MLLM</th><td>27.93</td><td>2.10</td><td>9.98</td><td>0.00</td><td>0.00</td></tr>
+                <tr><th scope="row">OpenView</th><td>30.72</td><td>2.57</td><td>19.80</td><td>1.08</td><td>0.30</td></tr>
+                <tr><th scope="row">MINDCUBE-Aug</th><td>29.00</td><td>4.52</td><td>18.10</td><td>0.00</td><td>0.00</td></tr>
+                <tr><th scope="row">MINDCUBE-Plain</th><td>30.21</td><td>4.77</td><td>19.12</td><td>0.12</td><td>0.00</td></tr>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">Closed-source MLLMs</th></tr>
+                <tr><th scope="row">GPT-4o</th><td>33.93</td><td>1.51</td><td>29.03</td><td>3.60</td><td>0.56</td></tr>
+                <tr><th scope="row">GPT-5-nano</th><td>33.36</td><td>1.73</td><td>24.28</td><td>2.89</td><td>0.87</td></tr>
+                <tr><th scope="row">GPT-5-mini</th><td>49.00</td><td>1.20</td><td>38.71</td><td>7.42</td><td>2.77</td></tr>
+                <tr><th scope="row">GPT-5</th><td>59.86</td><td>1.31</td><td>38.10</td><td>8.18</td><td>3.43</td></tr>
+                <tr><th scope="row">GPT-5.2</th><td>37.07</td><td>1.28</td><td>36.50</td><td>8.74</td><td>2.84</td></tr>
+                <tr class="group-row ours-group"><th colspan="6" scope="rowgroup">Fine-tuned Models (Qwen3VL-4B)</th></tr>
+                <tr><th scope="row">Ours (Instruct-tuning)</th><td>36.50</td><td>0.71</td><td>50.08</td><td>47.58</td><td>50.07</td></tr>
+                <tr><th scope="row">Ours (Grounded CoT, Direct Answer at Test)</th><td>33.95</td><td>10.75</td><td>29.10</td><td>16.35</td><td>11.50</td></tr>
+                <tr><th scope="row">Ours (CoT)</th><td>59.57</td><td>0.68</td><td>51.43</td><td>49.77</td><td>52.34</td></tr>
+                <tr class="best-row"><th scope="row">Ours (Grounded CoT)</th><td>64.93</td><td>0.58</td><td>54.99</td><td>69.34</td><td>70.92</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="highlight-metrics">
+            <div><span>+52.81</span><p>absolute mIoU gain over instruct tuning</p></div>
+            <div><span>69.34</span><p>grounding mIoU with Grounded CoT</p></div>
+            <div><span>70.92</span><p>grounding F1 with Grounded CoT</p></div>
+          </div>
+        </article>
+
+        <article class="result-block">
+          <div class="result-block-header">
+            <p class="eyebrow">Table 2</p>
+            <h3>Sim-to-real transfer on MINDCUBE-Tiny</h3>
+            <p>
+              The trained model is not only fitting VIEW2SPACE. Without any MINDCUBE fine-tuning, VIEW2SPACE-trained
+              Grounded-CoT transfers to real-world MINDCUBE-Tiny and surpasses the official MINDCUBE checkpoints.
+              The website highlights the key comparison; please see Table 2 in the paper for the full benchmark table.
+            </p>
+          </div>
+          <div class="table-scroll compact-table" role="region" aria-label="Table 2: Comparison on MINDCUBE-Tiny" tabindex="0">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th scope="col">Method</th>
+                  <th scope="col">Tuning on MINDCUBE</th>
+                  <th scope="col">Overall</th>
+                  <th scope="col">Rotation</th>
+                  <th scope="col">Among</th>
+                  <th scope="col">Around</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">Baseline</th></tr>
+                <tr><th scope="row">Random (chance)</th><td>-</td><td>32.35</td><td>36.36</td><td>32.29</td><td>30.66</td></tr>
+                <tr><th scope="row">Random (frequency)</th><td>-</td><td>33.02</td><td>38.30</td><td>32.66</td><td>35.79</td></tr>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">Open-source MLLMs and Spatial Models</th></tr>
+                <tr><th scope="row">InternVL2.5-8B</th><td>w/o Tuning</td><td>18.68</td><td>36.45</td><td>47.11</td><td>26.91</td></tr>
+                <tr><th scope="row">Molmo2-4B</th><td>w/o Tuning</td><td>37.33</td><td>36.00</td><td>38.83</td><td>35.75</td></tr>
+                <tr><th scope="row">Molmo2-8B</th><td>w/o Tuning</td><td>34.33</td><td>27.50</td><td>36.50</td><td>34.50</td></tr>
+                <tr><th scope="row">Mantis-8B (SigLip)</th><td>w/o Tuning</td><td>41.05</td><td>37.65</td><td>40.23</td><td>50.99</td></tr>
+                <tr><th scope="row">DeepSeek-VL2-Small</th><td>w/o Tuning</td><td>47.62</td><td>37.00</td><td>50.38</td><td>26.91</td></tr>
+                <tr><th scope="row">Gemma-3-12B-it</th><td>w/o Tuning</td><td>46.67</td><td>38.39</td><td>48.38</td><td>34.63</td></tr>
+                <tr><th scope="row">Idefics2-8B</th><td>w/o Tuning</td><td>35.86</td><td>35.15</td><td>35.94</td><td>35.49</td></tr>
+                <tr><th scope="row">Qwen2.5-VL-7B</th><td>w/o Tuning</td><td>29.26</td><td>38.76</td><td>29.50</td><td>21.35</td></tr>
+                <tr><th scope="row">Qwen3-VL-2B</th><td>w/o Tuning</td><td>32.58</td><td>26.50</td><td>36.33</td><td>30.00</td></tr>
+                <tr><th scope="row">Qwen3-VL-4B</th><td>w/o Tuning</td><td>36.67</td><td>41.50</td><td>34.67</td><td>37.25</td></tr>
+                <tr><th scope="row">Qwen3-VL-8B</th><td>w/o Tuning</td><td>37.42</td><td>46.00</td><td>35.83</td><td>35.50</td></tr>
+                <tr><th scope="row">RoboBrain</th><td>w/o Tuning</td><td>37.38</td><td>35.80</td><td>38.28</td><td>29.53</td></tr>
+                <tr><th scope="row">Spatial-MLLM</th><td>w/o Tuning</td><td>32.06</td><td>38.39</td><td>20.92</td><td>32.82</td></tr>
+                <tr><th scope="row">OpenView</th><td>w/o Tuning</td><td>40.08</td><td>24.50</td><td>45.50</td><td>39.75</td></tr>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">Closed-source MLLMs</th></tr>
+                <tr><th scope="row">Claude-4-Sonnet</th><td>w/o Tuning</td><td>44.75</td><td>48.42</td><td>44.21</td><td>47.62</td></tr>
+                <tr><th scope="row">GPT-4o</th><td>w/o Tuning</td><td>38.81</td><td>32.65</td><td>40.17</td><td>29.16</td></tr>
+                <tr><th scope="row">GPT-5-nano</th><td>w/o Tuning</td><td>38.58</td><td>44.00</td><td>38.67</td><td>35.75</td></tr>
+                <tr><th scope="row">GPT-5-mini</th><td>w/o Tuning</td><td>46.64</td><td>89.00</td><td>44.67</td><td>51.75</td></tr>
+                <tr class="group-row"><th colspan="6" scope="rowgroup">MINDCUBE Checkpoints</th></tr>
+                <tr><th scope="row">MINDCUBE-Aug</th><td>w Tuning</td><td>55.24</td><td>49.50</td><td>52.50</td><td>66.40</td></tr>
+                <tr><th scope="row">MINDCUBE-Plain</th><td>w Tuning</td><td>60.76</td><td>47.50</td><td>62.33</td><td>67.60</td></tr>
+                <tr class="group-row ours-group"><th colspan="6" scope="rowgroup">VIEW2SPACE-Trained Models</th></tr>
+                <tr><th scope="row">Ours 2B (Grounded-CoT)</th><td>w/o Tuning</td><td>59.92</td><td>49.00</td><td>56.50</td><td>70.50</td></tr>
+                <tr class="best-row"><th scope="row">Ours 4B (Grounded-CoT)</th><td>w/o Tuning</td><td>70.00</td><td>71.50</td><td>66.33</td><td>74.75</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="highlight-metrics two-up">
+            <div><span>70.00</span><p>overall MINDCUBE-Tiny accuracy without MINDCUBE tuning</p></div>
+            <div><span>+9.24</span><p>absolute gain over MINDCUBE-Plain checkpoint</p></div>
+          </div>
+        </article>
+
+        <article class="result-block scaling-block">
+          <div class="result-block-header">
+            <p class="eyebrow">Scaling Analysis</p>
+            <h3>Scaling helps perception, but harder reasoning and visibility constraints still break models.</h3>
+            <p>
+              Increasing data and model size improves mIoU, especially for lower-difficulty cases. However, the curves
+              fall as reasoning difficulty and key-object visibility difficulty increase, showing that deep
+              compositional multi-view reasoning remains structurally hard.
+            </p>
+          </div>
+          <figure class="figure-panel scaling-figure">
+            <img
+              src="assets/analysis-dim-curve.webp"
+              width="1600"
+              height="787"
+              alt="Scaling curves showing 2B and 4B model performance against reasoning difficulty and key-object visibility difficulty."
+            />
+            <figcaption>
+              Difficulty-aware scaling: larger models and more training data improve performance, but performance
+              declines as reasoning depth and visibility difficulty rise.
+            </figcaption>
+          </figure>
+        </article>
+      </section>
+
+      <section class="section section-pad" id="resources" aria-labelledby="resources-title">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Resources</p>
+          <h2 id="resources-title">Public release entry points.</h2>
+          <p>Use the evaluation split, training data, and released checkpoint to reproduce or extend the benchmark.</p>
+        </div>
+        <div class="resource-grid">
+          <a class="resource-card" href="http://arxiv.org/abs/2603.16506">
+            <span>arXiv</span>
+            <strong>arXiv:2603.16506</strong>
+            <p>Read the current VIEW2SPACE preprint and appendix.</p>
+          </a>
+          <a class="resource-card" href="https://github.com/pokerme7777/VIEW2SPACE">
+            <span>Code</span>
+            <strong>GitHub repository</strong>
+            <p>Evaluation scripts, prompts, and training utilities.</p>
+          </a>
+          <a class="resource-card" href="https://huggingface.co/datasets/Pokerme/view2space-v1">
+            <span>Dataset</span>
+            <strong>view2space-v1</strong>
+            <p>Public evaluation split for count, detection, and MCQ tasks.</p>
+          </a>
+          <a class="resource-card" href="https://huggingface.co/datasets/Pokerme/view2space-train">
+            <span>Training</span>
+            <strong>view2space-train</strong>
+            <p>Released training data for adapting sparse multi-view reasoning models.</p>
+          </a>
+          <a class="resource-card" href="https://huggingface.co/Pokerme/view2space_4b">
+            <span>Checkpoint</span>
+            <strong>view2space_GCoT_4b</strong>
+            <p>Grounded-CoT checkpoint for public evaluation.</p>
+          </a>
+          <a class="resource-card" href="https://huggingface.co/collections/Pokerme/view2space">
+            <span>Collection</span>
+            <strong>VIEW2SPACE on HF</strong>
+            <p>All public VIEW2SPACE resources in one collection.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-pad citation-section alt" id="citation" aria-labelledby="citation-title">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Citation</p>
+          <h2 id="citation-title">Cite VIEW2SPACE.</h2>
+        </div>
+        <div class="citation-shell">
+          <pre id="bibtex" tabindex="0"><code>@article{ke2026view2space,
+  title={VIEW2SPACE: Studying Multi-View Visual Reasoning from Sparse Observations},
+  author={Ke, Fucai and Cai, Zhixi and Li, Boying and Chen, Long and Lin, Beibei and Wang, Weiqing and Haghighi, Pari Delir and Haffari, Gholamreza and Rezatofighi, Hamid},
+  journal={arXiv preprint arXiv:2603.16506},
+  year={2026}
+}</code></pre>
+          <button class="button primary copy-button" type="button" data-copy-target="bibtex">Copy BibTeX</button>
+          <p class="copy-status" role="status" aria-live="polite" data-copy-status></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>VIEW2SPACE · ECCV 2026 Accepted Paper</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
