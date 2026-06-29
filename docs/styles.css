@@ -830,17 +830,22 @@ figcaption {
   color: var(--text-secondary);
 }
 
+.acknowledgement-section {
+  border-top: 1px solid var(--border-subtle);
+}
+
 .acknowledgement {
   display: grid;
   gap: var(--space-2);
   max-width: var(--container);
   margin: 0 auto;
-  border-top: 1px solid var(--border-subtle);
   padding: var(--space-6) var(--space-4);
+  justify-items: center;
   text-align: center;
 }
 
 .acknowledgement p:last-child {
+  max-width: 720px;
   margin: 0;
   color: var(--text-secondary);
   font-size: 16px;
