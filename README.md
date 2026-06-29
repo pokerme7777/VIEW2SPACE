@@ -33,6 +33,23 @@ We are preparing the first public release of VIEW2SPACE resources.
 - **Training data release:** [`view2space-train`](https://huggingface.co/datasets/Pokerme/view2space-train) ✅
 - **Checkpoint release:** [`view2space_GCoT_4b_checkpoint`](https://huggingface.co/Pokerme/view2space_4b) ✅
 
+## Training Data Release
+
+We have released the VIEW2SPACE training data on Hugging Face:
+[`view2space-train`](https://huggingface.co/datasets/Pokerme/view2space-train).
+The release includes grounded chain-of-thought supervision for multi-view
+spatial reasoning, connecting sparse visual observations with step-by-step
+spatial reasoning traces.
+
+Upcoming release items:
+
+- [ ] 3D environments
+- [ ] Data-generation interfaces for custom data collection
+
+<p align="center">
+  <img src="./media/ground_cot_video.gif" alt="VIEW2SPACE grounded chain-of-thought training data example" width="100%" />
+</p>
+
 ## Quick Start
 
 For public evaluation, start here:

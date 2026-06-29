@@ -172,8 +172,9 @@
           <p class="eyebrow">Benchmark</p>
           <h2 id="benchmark-title">Tasks shrink the answer space until visual grounding is unavoidable.</h2>
           <p>
-            VIEW2SPACE-v1 spans multiple-choice reasoning, visual counting, and visual grounding detection, with
-            difficulty controlled through view count, reasoning hops, and key-object visibility.
+            <a class="text-link" href="https://huggingface.co/datasets/Pokerme/view2space-v1">VIEW2SPACE-v1</a>
+            spans multiple-choice reasoning, visual counting, and visual grounding detection, with difficulty
+            controlled through view count, reasoning hops, and key-object visibility.
           </p>
         </div>
         <figure class="figure-panel wide">
@@ -259,6 +260,25 @@
             </figcaption>
           </figure>
         </div>
+        <figure class="figure-panel wide training-data-feature">
+          <img
+            src="assets/ground-cot-data.gif"
+            width="1600"
+            height="888"
+            loading="lazy"
+            alt="Grounded chain-of-thought training data sample showing sparse multi-view observations, visual evidence, and step-wise reasoning."
+          />
+          <figcaption>
+            <strong>Ground-CoT training data</strong>
+            <span>
+              Released on Hugging Face to train visual-evidence reasoning and improve transfer performance on
+              MINDCUBE-Tiny.
+            </span>
+            <a class="button hf-button caption-action" href="https://huggingface.co/datasets/Pokerme/view2space-train">
+              View training data
+            </a>
+          </figcaption>
+        </figure>
       </section>
 
       <section class="section section-pad alt" id="results" aria-labelledby="results-title">
@@ -326,7 +346,7 @@
                 <tr><th scope="row">Ours (Instruct-tuning)</th><td>36.50</td><td>0.71</td><td>50.08</td><td>47.58</td><td>50.07</td></tr>
                 <tr><th scope="row">Ours (Grounded CoT, Direct Answer at Test)</th><td>33.95</td><td>10.75</td><td>29.10</td><td>16.35</td><td>11.50</td></tr>
                 <tr><th scope="row">Ours (CoT)</th><td>59.57</td><td>0.68</td><td>51.43</td><td>49.77</td><td>52.34</td></tr>
-                <tr class="best-row"><th scope="row">Ours (Grounded CoT)</th><td>64.93</td><td>0.58</td><td>54.99</td><td>69.34</td><td>70.92</td></tr>
+                <tr class="best-row"><th scope="row"><a class="text-link" href="https://huggingface.co/Pokerme/view2space_4b">Ours (Grounded CoT)</a></th><td>64.93</td><td>0.58</td><td>54.99</td><td>69.34</td><td>70.92</td></tr>
               </tbody>
             </table>
           </div>
@@ -388,7 +408,7 @@
                 <tr><th scope="row">MINDCUBE-Plain</th><td>w Tuning</td><td>60.76</td><td>47.50</td><td>62.33</td><td>67.60</td></tr>
                 <tr class="group-row ours-group"><th colspan="6" scope="rowgroup">VIEW2SPACE-Trained Models</th></tr>
                 <tr><th scope="row">Ours 2B (Grounded-CoT)</th><td>w/o Tuning</td><td>59.92</td><td>49.00</td><td>56.50</td><td>70.50</td></tr>
-                <tr class="best-row"><th scope="row">Ours 4B (Grounded-CoT)</th><td>w/o Tuning</td><td>70.00</td><td>71.50</td><td>66.33</td><td>74.75</td></tr>
+                <tr class="best-row"><th scope="row"><a class="text-link" href="https://huggingface.co/Pokerme/view2space_4b">Ours 4B (Grounded-CoT)</a></th><td>w/o Tuning</td><td>70.00</td><td>71.50</td><td>66.33</td><td>74.75</td></tr>
               </tbody>
             </table>
           </div>
