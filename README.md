@@ -14,6 +14,7 @@
   <a href="http://arxiv.org/abs/2603.16506"><img src="https://img.shields.io/badge/arXiv-2603.16506-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv Paper" /></a>
   <img src="https://img.shields.io/badge/ECCV_2026-Paper_Accepted-2563eb?style=for-the-badge" alt="ECCV 2026 Paper Accepted" />
   <a href="https://huggingface.co/collections/Pokerme/view2space"><img src="https://img.shields.io/badge/HF_Collection-VIEW2SPACE-f97316?style=for-the-badge" alt="VIEW2SPACE Hugging Face Collection" /></a>
+  <a href="https://pokerme7777.github.io/VIEW2SPACE/"><img src="https://img.shields.io/badge/Project_Page-VIEW2SPACE-2f6f5e?style=for-the-badge" alt="VIEW2SPACE Project Page" /></a>
 </p>
 
 ## Motivation
