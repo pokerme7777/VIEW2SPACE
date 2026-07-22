@@ -22,7 +22,7 @@ This directory contains the release version of the Blender-based scene
 generation pipeline used by VIEW2SPACE. It covers asset preprocessing, preview
 rendering, optional asset annotation, and scene rendering.
 
-<div align="left" style="max-height: 520px; overflow-y: auto; width: 60%;">
+<div align="left" style="max-height: 200px; overflow-y: auto; width: 60%;">
   <img src="./Theme_preview.jpg" alt="VIEW2SPACE scene generation theme examples" width="100%" />
 </div>
 
