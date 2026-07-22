@@ -1,0 +1,65 @@
+{
+  "asset_paths": {
+    "snowman_path": "processed_asset/snowman/mapping.jsonl",
+    "table_path": "processed_asset/table/mapping.jsonl",
+    "cup_path": "processed_asset/cup/mapping.jsonl",
+    "ground_material_path": "processed_asset/GMAT/mapping.jsonl",
+    "fence_path": "processed_asset/fence/mapping.jsonl",
+    "sky_path": "processed_asset/sky/mapping.jsonl"
+  },
+  "defaults": {
+    "ground_size": 500,
+    "fit_coverage": 1.0,
+    "crop_image_fit_coverage": 0.75,
+    "normal_cam_deg": 45.0,
+    "crop_cam_deg": 50.0,
+    "EXCLUDE_NAMES": ["_ground", "fence", "surrounding"],
+    "four_angles_deg": [0.0, 90.0, 180.0, 270.0],
+    "RENDER_RESOLUTION": [800, 600],
+    "RENDER_SAMPLES": 256
+  },
+  "scenes": {
+    "example_grid_scene": {
+      "folder_name": "example_grid_scene",
+      "assets": {
+        "A": {"path": "snowman_path", "filters": [""]},
+        "B": {"path": "table_path", "filters": [""]},
+        "C": {"path": "cup_path", "filters": [""]},
+        "ground_material": {"path": "ground_material_path", "filters": ["floor", "ground"]},
+        "fence": {"path": "fence_path", "filters": ["wall", "fence"]},
+        "sky": {"path": "sky_path", "filters": ["sky", "hdri"]}
+      },
+      "placement": {
+        "RANDOM_PLACING_AB": true,
+        "A_ON_B_LAYOUT": false,
+        "linear_layout": false,
+        "only_active_a": false,
+        "KEEP_CENTER": true,
+        "KEEP_CENTER_VALUE": 1.5,
+        "GRID_N": 2,
+        "N_ASSET_A": 2,
+        "N_ASSET_B": 2,
+        "N_ASSET_C": 2,
+        "K_FENCE": [1, 1],
+        "K_OUTDOORART": [0, 0],
+        "K_ANCHOR": [0, 0],
+        "host_class": "B"
+      },
+      "environment": {
+        "FOCUS_ON_OUTDOORART": false,
+        "OUTDOOR_FIRST": false,
+        "FENCE_CLEARANCE": 1,
+        "OUTDOORART_CLEARANCE": 3
+      },
+      "camera": {
+        "VIEW_FROM_CENTER": true,
+        "CENTERVIEW_HEIGHT": 1.5
+      },
+      "generation": {
+        "SEED_BASE": 14200,
+        "NUMBER_OF_SCENES_TO_GENERATE": 1,
+        "VIEWS_PER_SCENE": 1
+      }
+    }
+  }
+}

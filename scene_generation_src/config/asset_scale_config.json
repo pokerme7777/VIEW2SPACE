@@ -1,0 +1,51 @@
+{
+  "folder_transit": {
+    "materials_cache": "GMAT",
+    "snowman_cache": "snowman",
+    "outdoor_cache": "outdoor",
+    "fence_cache": "fence",
+    "building_cache": "building",
+    "car_cache": "car",
+    "chair_cache": "chair",
+    "table_cache": "table",
+    "cup_cache": "cup",
+    "sky_cache": "sky",
+    "sky2_cache": "sky2",
+    "drone_cache": "drone",
+    "fly_cache": "fly",
+    "bus-stop_cache": "bus-stop"
+  },
+  "apply_scale": true,
+  "scales": {
+    "snowman": 1.0,
+    "outdoor": 1.0,
+    "fence": 1.0,
+    "GMAT": 2.0,
+    "building": 1.0,
+    "car": 1.0,
+    "chair": 1.0,
+    "table": 1.0,
+    "cup": 1.0,
+    "sky": 1.0,
+    "sky2": 1.0,
+    "drone": 4.0,
+    "fly": 1.0,
+    "bus-stop": 1.0
+  },
+  "facing": {
+    "snowman": 1.0,
+    "outdoor": 1.0,
+    "fence": 0.0,
+    "GMAT": 0.0,
+    "building": 1.0,
+    "car": 1.0,
+    "chair": 1.0,
+    "table": 0.0,
+    "cup": 0.0,
+    "sky": 0.0,
+    "sky2": 0.0,
+    "drone": 1.0,
+    "fly": 1.0,
+    "bus-stop": 1.0
+  }
+}

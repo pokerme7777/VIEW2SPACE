@@ -25,13 +25,14 @@
 
 ## Announcement
 
-We are preparing the first public release of VIEW2SPACE resources.
+VIEW2SPACE resources are publicly available.
 
 - **Paper status:** Accepted to ECCV 2026 🚀
 - **Hugging Face collection:** [`VIEW2SPACE`](https://huggingface.co/collections/Pokerme/view2space)
 - **Testing set release:** [`view2space-v1`](https://huggingface.co/datasets/Pokerme/view2space-v1) ✅
 - **Training data release:** [`view2space-train`](https://huggingface.co/datasets/Pokerme/view2space-train) ✅
 - **Checkpoint release:** [`view2space_GCoT_4b_checkpoint`](https://huggingface.co/Pokerme/view2space_4b) ✅
+- **Scene generation source release:** [`scene_generation_src`](./scene_generation_src/README.md) ✅
 
 ## Training Data Release
 
@@ -41,14 +42,17 @@ The release includes grounded chain-of-thought supervision for multi-view
 spatial reasoning, connecting sparse visual observations with step-by-step
 spatial reasoning traces.
 
-Upcoming release items:
-
-- [ ] 3D environments
-- [ ] Data-generation interfaces for custom data collection
-
 <p align="center">
   <img src="./media/ground_cot_video.gif" alt="VIEW2SPACE grounded chain-of-thought training data example" width="100%" />
 </p>
+
+## Scene Generation
+
+If you want to generate custom 3D scenes for VIEW2SPACE-style data collection,
+please start from [`scene_generation_src`](./scene_generation_src/README.md).
+The folder contains the Blender-based scene generation pipeline, including asset
+preprocessing, preview rendering, configurable scene synthesis, and metadata
+export.
 
 ## Quick Start
 
@@ -62,6 +66,7 @@ Source code is organized by responsibility:
 - `src/eval`: public evaluation entrypoints
 - `src/train`: training launchers and preprocessing helpers
 - `src`: shared prompt, message-building, and config files
+- `scene_generation_src`: Blender-based 3D scene generation pipeline
 
 
 
