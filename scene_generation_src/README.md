@@ -22,6 +22,10 @@ This directory contains the release version of the Blender-based scene
 generation pipeline used by VIEW2SPACE. It covers asset preprocessing, preview
 rendering, optional asset annotation, and scene rendering.
 
+<div align="left" style="max-height: 520px; overflow-y: auto; width: 60%;">
+  <img src="./Theme_preview.jpg" alt="VIEW2SPACE scene generation theme examples" width="100%" />
+</div>
+
 | Stage | Main entrypoint | Output |
 | --- | --- | --- |
 | Asset preparation | `scripts/prepare_example_assets.sh` | `processed_asset/*/mapping.jsonl` |
@@ -46,6 +50,7 @@ rendering, optional asset annotation, and scene rendering.
 
 ```text
 scene_generation_src/
+  Theme_preview.jpg                   # README preview image for generated scenes
   scene_pipeline_grid.py              # Main Blender scene renderer
   preprocess_cache.py                 # Normalizes downloaded BlenderKit assets
   blenderkit_preview.py               # Renders preview images for assets

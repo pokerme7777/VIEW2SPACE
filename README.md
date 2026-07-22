@@ -54,6 +54,10 @@ The folder contains the Blender-based scene generation pipeline, including asset
 preprocessing, preview rendering, configurable scene synthesis, and metadata
 export.
 
+<div align="left" style="max-height: 520px; overflow-y: auto; width: 60%;">
+  <img src="./scene_generation_src/Theme_preview.jpg" alt="VIEW2SPACE scene generation theme examples" width="100%" />
+</div>
+
 ## Quick Start
 
 For public evaluation, start here:
